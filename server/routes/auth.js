@@ -1,9 +1,10 @@
 import express from "express";
 
 const router = express.Router();
+
 // Controllers
 import { register } from "../controllers/auth";
 
-router.get("/register", register);
+router.post("/register", register);
 
 module.exports = router;
