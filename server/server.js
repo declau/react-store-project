@@ -9,9 +9,6 @@ require("dotenv").config();
 //Create express app
 const app = express();
 
-//Route
-readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
-
 // database connection
 mongoose
   .connect(process.env.DATABASE, {
@@ -36,6 +33,9 @@ app.use((req, res, next) => {
   console.log("Middleware working...");
   next();
 });
+
+//Route
+readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 
 //Port
 const port = process.env.PORT || 8000;
