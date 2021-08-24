@@ -1,30 +1,29 @@
-import { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const userSchema = new Schema(
   {
     name: {
-      type: "String",
+      type: String,
       trim: true,
       required: true,
     },
     email: {
-      type: "String",
+      type: String,
       trim: true,
       required: true,
       unique: true,
     },
     password: {
-      type: "String",
+      type: String,
       required: true,
       min: 6,
       max: 64,
     },
-    picture: {
-      type: "String",
-      default: "/avatar.png",
-      unique: true,
-    },
+    // picture: {
+    //   type: String,
+    //   // default: "/avatar.png"",
+    // },
     role: {
       type: [String],
       default: ["Subscriber"],
@@ -36,4 +35,5 @@ const userSchema = new Schema(
   },
   { timestamps: true }
 );
+
 export default mongoose.model("User", userSchema);
