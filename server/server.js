@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-// const cors = require("cors");
 import { readdirSync } from "fs";
 import mongoose from "mongoose";
 const morgan = require("morgan");
