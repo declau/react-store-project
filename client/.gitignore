@@ -2,7 +2,6 @@
 node_modules
 .pnp
 .pnp.js
-
 # next.js build output
 .next
 .../.next/...
@@ -10,3 +9,4 @@ node_modules
 # misc
 .DS_Store
 package-lock.json
+.env.local
